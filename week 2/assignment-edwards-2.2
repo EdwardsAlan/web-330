@@ -1,0 +1,50 @@
+/*
+ Expected output:
+
+ FirstName LastName
+ <AssignmentName>
+ <Today's Date>
+
+ The person's full name is '<fullname>.'
+ The person's age is '<age>.'
+
+*/
+
+
+var header = require('../header.js');
+
+exports.display = function (firstName, lastName, assignment) {
+    let output = '\n' + firstName + ' ' + lastName + '\n' + assignment + '\nDate: ' +
+      new Date().toLocaleDateString('en-US')
+  
+    return output
+  };
+// start program
+
+var person =
+
+{
+    getAge: function()
+    {
+        return this.age;
+    }
+};
+
+var alan = Object.create(person, {
+    "age":
+    {
+        "value": "35"
+    },
+    
+        "fullname":
+    {
+        "value": "Alan Edwards"
+    }
+});
+
+alan.getAge();
+
+console.log("The person's full name is: '%s'", alan.fullname);
+console.log("The person's age is  '%s'", alan.age);
+
+// end program
