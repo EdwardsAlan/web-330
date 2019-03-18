@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jQuery AJAX Example</title>
+</head>
+<body>
+ 
+<!-- HTML SECTION  -->
+<div class="wrapper">
+        <button>Click Me</button>   <!-- content will be shown on this button click -->
+        <div class="content"></div> <!-- content will be shown in this div -->
+    </div>
+<!-- JAVASCRIPT SECTION  -->
+<script src="jquery-1.11.3.min.js"></script>
+ 
+<script type="text/javascript">
+    $('button').on('click', function(){    
+        $.ajax('document.html', {                           
+            success: function(response){    
+             $('.content').html(response);
+            },
+            type: 'GET',       
+    });
+    });
+</script>
+ 
+</body>
+</html>
